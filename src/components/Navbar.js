@@ -3,6 +3,7 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
+
 // import {Link} from 'react-router-dom'
 export default function Navbar(props) {
   return (
@@ -29,6 +30,7 @@ export default function Navbar(props) {
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
           <button className="btn btn-outline-primary" type="submit">Search</button>
         </form>*/}
+        
         <div class={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
   <input class="form-check-input" type="checkbox" onClick={props.toggleMode} role="switch" id="flexSwitchCheckDefault"/>
   <label class="form-check-label" for="flexSwitchCheckDefault">Enable Dark Mode</label>
