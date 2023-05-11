@@ -49,12 +49,12 @@ export default function Navbar(props) {
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
           <button className="btn btn-outline-primary" type="submit">Search</button>
         </form>*/}
-        <div className="bg-primary rounded mx-2" style={{height:'30px',width:'30px'}} onClick={()=>{props.colorMode('primary')}}>  </div>
-        <div className="bg-secondary rounded mx-2" style={{height:'30px',width:'30px'}} onClick={()=>{props.colorMode('secondary')}}>  </div>
-        <div className="bg-success rounded mx-2" style={{height:'30px',width:'30px'}} onClick={()=>{props.colorMode('success')}}>  </div>
-        <div className="bg-danger rounded mx-2" style={{height:'30px',width:'30px'}} onClick={()=>{props.colorMode('danger')}}>  </div>
-        <div className="bg-warning rounded mx-2" style={{height:'30px',width:'30px'}} onClick={()=>{props.colorMode('warning')}}>  </div>
-        <div className="bg-info rounded mx-2" style={{height:'30px',width:'30px'}} onClick={()=>{props.colorMode('info')}}>  </div>
+        <div className="bg-primary rounded mx-2" style={{height:'30px',width:'30px',cursor:'pointer'}} onClick={()=>{props.colorMode('primary')}}>  </div>
+        <div className="bg-secondary rounded mx-2" style={{height:'30px',width:'30px',cursor:'pointer'}} onClick={()=>{props.colorMode('secondary')}}>  </div>
+        <div className="bg-success rounded mx-2" style={{height:'30px',width:'30px',cursor:'pointer'}} onClick={()=>{props.colorMode('success')}}>  </div>
+        <div className="bg-danger rounded mx-2" style={{height:'30px',width:'30px',cursor:'pointer'}} onClick={()=>{props.colorMode('danger')}}>  </div>
+        <div className="bg-warning rounded mx-2" style={{height:'30px',width:'30px',cursor:'pointer'}} onClick={()=>{props.colorMode('warning')}}>  </div>
+        <div className="bg-info rounded mx-2" style={{height:'30px',width:'30px',cursor:'pointer'}} onClick={()=>{props.colorMode('info')}}>  </div>
         
 <div>
   
