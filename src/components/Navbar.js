@@ -1,15 +1,33 @@
 
 
 
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 // import {Link} from 'react-router-dom'
 export default function Navbar(props) {
+  const [navMode,setNavmode]=useState('light')
+  const[btnTxt,setBtnTxt]=useState('Enable Dark Mode')
+  
+    const toggleState= ()=>{
+      
+        if(navMode==='light')
+        {
+        setNavmode('dark')
+        setBtnTxt('Enable Light Mode')
+    }
+        
+        else
+        {
+        setNavmode('light')
+        setBtnTxt('Enable Dark Mode')
+        
+    }
+}
   return (
      
       
-    <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+    <nav className={`navbar navbar-expand-lg navbar-${navMode} bg-${navMode==='dark'?'dark':'light'}`}>
     <div className="container-fluid">
       <a className="navbar-brand" href="/">{props.title}</a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,16 +42,23 @@ export default function Navbar(props) {
             <a className="nav-link" href="#">{props.about}</a>
           </li>
          
-        
+
+          
         </ul>
         {/*<form className="d-flex" role="search">
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
           <button className="btn btn-outline-primary" type="submit">Search</button>
         </form>*/}
+        <div className="bg-primary rounded mx-2" style={{height:'30px',width:'30px'}} onClick={()=>{props.colorMode('primary')}}>  </div>
+        <div className="bg-secondary rounded mx-2" style={{height:'30px',width:'30px'}} onClick={()=>{props.colorMode('secondary')}}>  </div>
+        <div className="bg-success rounded mx-2" style={{height:'30px',width:'30px'}} onClick={()=>{props.colorMode('success')}}>  </div>
+        <div className="bg-danger rounded mx-2" style={{height:'30px',width:'30px'}} onClick={()=>{props.colorMode('danger')}}>  </div>
+        <div className="bg-warning rounded mx-2" style={{height:'30px',width:'30px'}} onClick={()=>{props.colorMode('warning')}}>  </div>
+        <div className="bg-info rounded mx-2" style={{height:'30px',width:'30px'}} onClick={()=>{props.colorMode('info')}}>  </div>
         
-        <div class={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
-  <input class="form-check-input" type="checkbox" onClick={props.toggleMode} role="switch" id="flexSwitchCheckDefault"/>
-  <label class="form-check-label" for="flexSwitchCheckDefault">Enable Dark Mode</label>
+<div>
+  
+  <button className="btn btn-primary btn-sm my-3 mx-2" onClick={toggleState}>{btnTxt}</button>
 </div>
       </div>
     </div>

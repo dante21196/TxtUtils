@@ -38,14 +38,27 @@ function App() {
     showAlert("Light mode has been enabled!","Success!")
   }
 }
+    const colorMode=(key)=>{
+    document.body.style.color="white";
+    setMode(key);
+    document.body.classList.remove('bg-primary');
+    document.body.classList.remove('bg-secondary');
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-info');
+    document.body.classList.remove('bg-warning');
+     document.body.classList.add(`bg-${key}`);
+    showAlert(`${key} Mode has been enabled`,'Success!')
+    }
+
   return (
     <>
     {/* <Router> */}
-   <Navbar title="TxtUtils" mode={mode} toggleMode={toggleMode} about="About TxtUtils"/>
+   <Navbar title="TxtUtils" mode={mode} showAlert={showAlert} about="About TxtUtils" colorMode={colorMode}/>
    <Alert alert={alert}/>
    <div className="container">
    {/*<Routes>
-   {/* <Route exact path="/" element=*/}{<TextForm showAlert={showAlert} heading="Example TxtForm" mode={mode}/>}{/*/>
+   {/* <Route exact path="/" element=*/}{<TextForm showAlert={showAlert} heading="Example TxtForm" mode={mode} />}{/*/>
    
    <Route exact path="/about" element={<About/>}/>
     
